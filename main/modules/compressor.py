@@ -12,7 +12,7 @@ import subprocess
 
 async def gg():
 
-  cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animxt':fontsize=18:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -s 636x360 -c:v h264 -preset veryfast -pix_fmt yuv420p10le -r 24000/1001 -tune animation -crf 27 -x264-params ref=5:me=umh:subme=8:psy_rd=0.00:0.00:mixed_ref=1:me_range=8:trellis=2:lookahead_threads=2:bframes=4:b_adapt=2:weightp=2:keyint=240:keyint_min=24:qpmax=69:rc_lookahead=60:aq=1:1.00:no-info=1 -c:a copy "out.mkv" -y''',
+  cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animxt':fontsize=18:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -s 636x360 -c:v h264 -preset veryfast -pix_fmt yuv420p -r 24000/1001 -tune animation -crf 27 -x264-params ref=5:me=umh:subme=8:psy_rd=0.00:0.00:mixed_ref=1:me_range=8:trellis=2:lookahead_threads=2:bframes=4:b_adapt=2:weightp=2:keyint=240:keyint_min=24:qpmax=69:rc_lookahead=60:aq=1:1.00:no-info=1 -c:a copy "out.mkv" -y''',
 
   subprocess.Popen(cmd,shell=True)
 
