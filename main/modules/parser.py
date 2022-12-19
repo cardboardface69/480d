@@ -14,7 +14,7 @@ def trim_title(title: str):
     return title
 
 def parse():
-    a = feedparser.parse("https://subsplease.org/rss/?r=sd")
+    a = feedparser.parse("https://subsplease.org/rss/?r=sd", "https://nyaa.si/?page=rss&q=ASW&c=0_0&f=0")
     b = a["entries"]
     data = []    
 
